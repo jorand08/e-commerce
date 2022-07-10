@@ -1,0 +1,112 @@
+.header{
+    padding: var(--padding-mobile);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header i{
+    font-size: 1.3rem;
+}
+
+.header_title{
+    color: var(--secondary-color);
+}
+
+.header_menuham{
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+.navbar{
+    width: min(100%, 300px);
+    position: fixed;
+    background-color: var(--primary-color);
+    height: 100vh;
+    right: 0;
+    top: 0;
+    padding-top: 80px;
+    transition: transform 400ms ease;
+    transform: translateX(105%);
+    box-shadow: 0 0 5px 0 rgba(83, 83, 83, 0.555);
+}
+.navbar-open{
+    transition: transform 400ms ease;
+    transform: translateX(0);
+}
+.navbar_list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.navbar_links{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar_link-active{
+    color: var(--secondary-color);
+}
+
+
+@media screen and (min-width: 720px) {
+    .header{
+        padding: 0 0 0 var(--padding-tablet);
+        border-bottom: 1px solid var(--border-color);
+        height: 100px;
+    }
+    .header_menuham{
+        display: none
+    }
+    .header_menuham i{
+        font-size: 1.3rem;
+    }
+
+    .navbar-open{
+        transform: translatex(0);
+        transition-duration: 0ms;
+    }
+    .navbar{
+        transform: translatex(0);
+        transition-duration: 0ms;
+        position: static;
+        width: auto;
+        height: auto;
+        padding: initial;
+        box-shadow: none;
+        width: min(50%, 800px);
+        background-color: transparent;
+    }
+    .navbar_list{
+        flex-direction: initial;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    .navbar_list i{
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .navbar_items{
+        /* border-left: 1px solid var(--border-color); */
+        padding: 0;
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar_links{
+        padding: 0 30px;
+        
+    }
+
+}
