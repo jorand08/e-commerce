@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import {useParams } from 'react-router-dom'
+import ProductInfoId from './ProductInfoId'
 import './style/productScreen.css'
 
 const classImg=['', 'second-img', 'third-img']
@@ -58,12 +59,22 @@ const ProductScreen = () => {
           }
         </div>
         <div onClick={clickNext} className='slider_next'><i className="fa-solid fa-angle-right"></i></div>
+        <div className='container_puntos'>
+        <div 
+          onClick={() => setIndexClass(0)} 
+          className={indexClass === 0 ? 'puntos_active puntos'  : 'puntos' }>
+        </div>
+        <div 
+          onClick={() => setIndexClass(1)} 
+          className={indexClass === 1 ? 'puntos_active puntos' : 'puntos' }>
+        </div>
+        <div 
+          onClick={() => setIndexClass(2)} 
+          className={indexClass === 2 ? 'puntos_active puntos' : 'puntos' } >
+        </div>
       </div>
-      <div className='container_puntos'>
-        <div className='puntos'></div>
-        <div className='puntos'></div>
-        <div className='puntos' ></div>
       </div>
+      <ProductInfoId product={product}/>
     </div>
   )
 }
